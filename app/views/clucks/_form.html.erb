@@ -1,0 +1,22 @@
+<%= form_with(model: cluck) do |form| %>
+  <% if cluck.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cluck.errors.count, "error") %> prohibited this cluck from being saved:</h2>
+
+      <ul>
+        <% cluck.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cluck %>
+    <%= form.text_area :cluck %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
